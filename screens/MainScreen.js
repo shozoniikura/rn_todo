@@ -6,6 +6,9 @@ import {useNavigation} from '@react-navigation/native';
 // import modules
 import { getData } from '../modules/webAPI';
 
+// import components
+import ToDo from '../components/ToDo';
+
 export default function MainScreen(args) {
   const {params} = args.route
   const {navigate} = useNavigation();
@@ -32,9 +35,7 @@ export default function MainScreen(args) {
       <View style={styles.todoContainer}>
         <View style={styles.todos}>
           {todos.map((todo, index) => (
-            <View style={styles.todo} key={index}>
-              <Text key={index} style={styles.todoText}>{todo.title}</Text>
-            </View>
+            <ToDo key={index} todo={todo} />
           ))}
         </View>
       </View>
@@ -76,14 +77,5 @@ const styles = StyleSheet.create({
     // backgroundColor: '#00f',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
-  },
-  todo:{
-    flexDirection: "row",
-    // backgroundColor: '#aaa',
-    marginBottom: 10,
-    marginLeft: 20,
-  },
-  todoText: {
-    fontSize: 25,
   },
 });
