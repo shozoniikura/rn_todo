@@ -7,25 +7,27 @@ import {useNavigation} from '@react-navigation/native';
 import { getData } from '../modules/webAPI';
 
 export default function MainScreen(args) {
+  const {params} = args.route
+  const {navigate} = useNavigation();
+  // const {todos, setTodos} = params;
   const samples = [
     {title: "おはよう"},
     {title: "こんにちは"},
   ]
   const [todos, setTodos] = React.useState(samples);
-  const {params} = args.route
-  const {navigate} = useNavigation();
+  // console.log(params);
 
   return (
     <View style={styles.container}>
       <View style={styles.top}>
         <View style={styles.menu}>
           <View sytle={styles.menuButtton}>
+            <Button title="データ更新" onPress={() => {(getData(setTodos))}} />
+          </View>
+          <View style={styles.menuButtton} />
+          <View sytle={styles.menuButtton}>
             <Button title="About" onPress={() => (navigate('About'))} />
           </View>
-          {/* <View style={styles.menuButtton} /> */}
-          {/* <View sytle={styles.menuButtton}>
-            <Button title="データ更新" onPress={() => {(getData(setTodos))}} />
-          </View> */}
           <StatusBar backgroundColor={"#0af"} />
         </View>
       </View>
