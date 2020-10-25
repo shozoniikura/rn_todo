@@ -26,4 +26,12 @@ export class ToDoRecord {
     this.priority = props.priority;
     this.title = props.title;
   }
+
+  done() {
+    const urlBase = constants.urlToDoBase;
+    const url = `${urlBase}${this.id}.json`;
+    axios.delete(url).then((res)=>{
+      console.log(`${url} is deleted.`);
+    });
+  }
 }
