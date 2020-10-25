@@ -5,8 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 
-// import modules
-import constants from './modules/constants';
+// // import modules
+// import constants from './modules/constants';
 
 // import Screens
 import MainScreen from './screens/MainScreen';
