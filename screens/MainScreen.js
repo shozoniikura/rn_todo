@@ -15,29 +15,28 @@ export default function MainScreen(args) {
   const {params} = args.route
   const {navigate} = useNavigation();
 
-  // const updateData = async(data) => {
-  //   console.log(data);
-  //   console.log("updating todos");
-    
-  //   setTodos(data);
-  //   console.log(todos);
-  //   console.log("updated todos");
-  // };
   return (
     <View style={styles.container}>
-      <View style={styles.menu}>
-        <View  sytle={styles.menuButtton}>
-          <Button title="About" onPress={() => (navigate('About'))} />
+      <View style={styles.top}>
+        <View style={styles.menu}>
+          <View sytle={styles.menuButtton}>
+            <Button title="About" onPress={() => (navigate('About'))} />
+          </View>
+          {/* <View style={styles.menuButtton} /> */}
+          {/* <View sytle={styles.menuButtton}>
+            <Button title="データ更新" onPress={() => {(getData(setTodos))}} />
+          </View> */}
+          <StatusBar backgroundColor={"#0af"} />
         </View>
-        <View  sytle={styles.menuButtton}>
-          <Button title="データ更新" onPress={() => {(getData(setTodos))}} />
-        </View>
-        <StatusBar backgroundColor={"#0af"} />
       </View>
-      <View style={styles.todos}>
-        {todos.map((todo, index) => (
-          <Text key={index}>{todo.title}</Text>
-        ))}
+      <View style={styles.todoContainer}>
+        <View style={styles.todos}>
+          {todos.map((todo, index) => (
+            <View style={styles.todo} key={index}>
+              <Text key={index} style={styles.todoText}>{todo.title}</Text>
+            </View>
+          ))}
+        </View>
       </View>
     </View>
   );
@@ -46,24 +45,45 @@ export default function MainScreen(args) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    // backgroundColor: '#0f0',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  top: {
+    flex: 1,
+    flexDirection: "row",
     alignItems: 'center',
     justifyContent: 'center',
   },
   menu: {
-    flexDirection: 'column',
-    // justifyContent: 'flex-space',
+    flex: 1,
+    flexDirection: "row",
+    // backgroundColor: "red",
+    alignItems: 'center',
+    justifyContent: 'flex-end',
   },
   menuButtton: {
-    alignItems: 'stretch',
-    margin: 20,
-    backgroundColor: "red",
-    height: 50,
+    padding: 20,
+    margin: 30,
+  },
+  todoContainer: {
+    flex: 9,
+    flexDirection: "row",
   },
   todos: {
-    flex: 9,
-    backgroundColor: '#fff',
-    // alignItems: 'center',
+    flex: 1,
+    flexDirection: "column",
+    // backgroundColor: '#00f',
+    alignItems: 'flex-start',
     justifyContent: 'flex-start',
+  },
+  todo:{
+    flexDirection: "row",
+    // backgroundColor: '#aaa',
+    marginBottom: 10,
+    marginLeft: 20,
+  },
+  todoText: {
+    fontSize: 25,
   },
 });

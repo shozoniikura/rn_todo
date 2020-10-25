@@ -20,6 +20,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Main">
         <Stack.Screen name="Main" component={MainScreen}
+          options={{title: "ToDo"}}
           initialParams={{}}
         />
         <Stack.Screen name="About" component={AboutScreen}
