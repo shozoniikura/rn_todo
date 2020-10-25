@@ -9,13 +9,11 @@ import { getData } from '../modules/webAPI';
 export default function MainScreen(args) {
   const {params} = args.route
   const {navigate} = useNavigation();
-  // const {todos, setTodos} = params;
   const samples = [
     {title: "おはよう"},
     {title: "こんにちは"},
   ]
   const [todos, setTodos] = React.useState(samples);
-  // console.log(params);
 
   return (
     <View style={styles.container}>
