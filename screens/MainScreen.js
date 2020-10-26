@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 // import modules
 import { getData } from '../modules/webAPI';
@@ -32,12 +32,14 @@ export default function MainScreen(args) {
           <StatusBar backgroundColor={"#0af"} />
         </View>
       </View>
-      <View style={styles.todoContainer}>
+      <View style={styles.todoContainer} >
+      <ScrollView scrollEnabled={true}>
         <View style={styles.todos}>
           {todos.map((todo, index) => (
-            <ToDo key={index} todo={todo} />
+            <ToDo key={index} todo={todo} funcEffect={setTodos} />
           ))}
         </View>
+      </ScrollView>
       </View>
     </View>
   );
