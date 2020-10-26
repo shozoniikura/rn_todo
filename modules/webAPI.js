@@ -27,11 +27,12 @@ export class ToDoRecord {
     this.title = props.title;
   }
 
-  done() {
+  done(funcEffect) {
     const urlBase = constants.urlToDoBase;
     const url = `${urlBase}${this.id}.json`;
     axios.delete(url).then((res)=>{
       console.log(`${url} is deleted.`);
+      getData(funcEffect);
     });
   }
 }
