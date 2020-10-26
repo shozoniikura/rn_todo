@@ -32,14 +32,14 @@ export default function MainScreen(args) {
           <StatusBar backgroundColor={"#0af"} />
         </View>
       </View>
-      <View style={styles.todoContainer} >
-      <ScrollView scrollEnabled={true}>
-        <View style={styles.todos}>
-          {todos.map((todo, index) => (
-            <ToDo key={index} todo={todo} funcEffect={setTodos} />
-          ))}
-        </View>
-      </ScrollView>
+      <View style={styles.todoContainer}>
+        <ScrollView scrollEnabled={true}>
+          <View style={styles.todos}>
+            {todos.map((todo, index) => (
+              <ToDo key={index} todo={todo} funcEffect={setTodos} />
+            ))}
+          </View>
+        </ScrollView>
       </View>
     </View>
   );
