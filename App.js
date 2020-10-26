@@ -4,13 +4,6 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-// 初期設定
-import { PORT } from '@env'
-console.log("PORT is ");
-console.log(PORT);
-1+2;
-console.log("----");
-
 // // import modules
 // import constants from './modules/constants';
 
