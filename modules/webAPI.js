@@ -6,7 +6,6 @@ const axios = require('axios');
 
 export const getData = (funcEffect) => {
   const url = constants.urlToDos;
-  console.log(url);
   return fetch(url)
     .then((response) => response.json())
     .then((json) => {
