@@ -6,6 +6,7 @@ const axios = require('axios');
 
 export const getData = (funcEffect) => {
   const url = constants.urlToDos;
+  console.log(url);
   return fetch(url)
     .then((response) => response.json())
     .then((json) => {
@@ -25,6 +26,7 @@ export class ToDoRecord {
     this.id = props.id;
     this.priority = props.priority;
     this.title = props.title;
+    this.status = props.status;
   }
 
   done(funcEffect) {
