@@ -9,7 +9,7 @@ export default function ToDo(props) {
   // console.log(props);
   return (
     <View style={styles.todo}>
-      <CheckBox onValueChange={(x)=> {console.log(todo);todo.done(funcEffect)}} />
+      <CheckBox onValueChange={(x)=> {todo.done(funcEffect)}} />
       <Text style={styles.todoText}>{todo.title}</Text>
     </View>
   );
