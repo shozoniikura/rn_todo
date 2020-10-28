@@ -12,12 +12,10 @@ import ToDo from '../components/ToDo';
 export default function MainScreen(args) {
   const {params} = args.route
   const {navigate} = useNavigation();
-  const samples = [
-    {title: "おはよう"},
-    {title: "こんにちは"},
-  ]
-  const [todos, setTodos] = React.useState(samples);
-
+  const [todos, setTodos] = React.useState([]);
+  React.useEffect(() => {
+    getData(setTodos);
+  }, []);
   return (
     <View style={styles.container}>
       <View style={styles.top}>

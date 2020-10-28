@@ -4,7 +4,7 @@ const constants = {
   proto: (API_PROTO || 'http://'),
   host: (API_HOST || '10.0.3.2'),
   port: (API_PORT || '14330'),
-  pathToDos: '/to_dos.json',
+  pathToDos: '/to_dos/tasks.json',
   pathToDoBase: '/to_dos/',
 };
 

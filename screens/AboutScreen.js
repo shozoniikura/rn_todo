@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function AboutScreen(args) {
-  const {params} = args.route
+  // const {params} = args.route
   return (
     <View style={styles.container}>
       <Text style={styles.largeFont}>About</Text>
